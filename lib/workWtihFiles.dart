@@ -2,9 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'main.dart';
-
-class newFrame extends StatelessWidget
+class countNumber extends StatefulWidget
 {
+  @override
+  C_countNumber createState() => C_countNumber();
+}
+class C_countNumber extends State<countNumber>
+{
+  int counter=0;
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -14,12 +19,34 @@ class newFrame extends StatelessWidget
         titleSpacing: 1.3,
         centerTitle: true,
         backgroundColor: Colors.red[600],
-      ),
-          //working with Containers and multiple childs
-          body: new Container(
-            alignment: Alignment.center,
-
-          ),
+      ),//working with Containers and multiple childs
+      body: new Container(
+        alignment: Alignment.center,
+        child: new Column(
+        children: [
+        new Container(
+        alignment: Alignment.center,
+          child : Text(
+          '$counter',
+                style: TextStyle(
+                fontSize: 25.0,
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.italic,
+                ),
+          )
+        ),
+            new FloatingActionButton.extended(
+            onPressed: (){
+              setState(() {
+                counter+=1;
+              });
+            },
+            label: Text('Count pressed'),
+            icon: Icon(Icons.add_circle),
+            )
+            ],
+        ),
+        ),
       floatingActionButton: FloatingActionButton.extended(onPressed: (){
         return runApp(MaterialApp(
             home: Home()
@@ -32,4 +59,5 @@ class newFrame extends StatelessWidget
     );
   }
 
+  
 }

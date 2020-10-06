@@ -29,7 +29,7 @@ class Home extends StatelessWidget
       floatingActionButton: FloatingActionButton.extended(
         onPressed: (){
           return runApp(MaterialApp(
-              home: newFrame()
+              home: countNumber()
           ));
         },
         label: Text('newFrame'),
