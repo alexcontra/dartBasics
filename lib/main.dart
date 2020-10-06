@@ -1,4 +1,5 @@
 
+import 'package:dart_basics/workWtihFiles.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
@@ -38,26 +39,4 @@ class Home extends StatelessWidget
     );
   }
 }
-class newFrame extends StatelessWidget
-{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Scaffold(
-      appBar: AppBar(
-        title:Text('new Frame'),
 
-      ),
-      floatingActionButton: FloatingActionButton.extended(onPressed: (){
-        return runApp(MaterialApp(
-          home: Home()
-        ));
-      },
-          label: Text('back to main Frame'),
-          icon : Icon(Icons.flip_to_back),
-          backgroundColor: Colors.red,
-      ),
-    );
-  }
-
-}
